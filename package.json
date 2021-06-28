@@ -1,0 +1,11 @@
+{
+  "name": "classproject",
+  "version": "1.0.0",
+  "description": "CEN4010 class project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
