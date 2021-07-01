@@ -12,17 +12,17 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // db connection
-// mongoose.connect(config.database);
+mongoose.connect(config.database, { useNewUrlParser: true });
 
-// mongoose.connection.on('connected',()=>{
-//     console.log(`connected to database ${config.database}`);
-// });
+mongoose.connection.on('connected',()=>{
+    console.log(`connected to database ${config.database}`);
+});
 
-// mongoose.connection.on('error',(error)=>{
-//     console.log(`Database error ${error}`);
-// });
+mongoose.connection.on('error',(error)=>{
+    console.log(`Database error ${error}`);
+});
 
-// routes
+// // routes
 app.get('/', (req, res) => {
     res.send("Hello World!");
 });
