@@ -7,8 +7,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const config = require('./config/database');
 
+// routes import
+var profileManagement = require('./routes/profileManagement');
+
 // middleware
 app.use(cors());
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 // db connection
@@ -22,11 +26,8 @@ mongoose.connection.on('error',(error)=>{
     console.log(`Database error ${error}`);
 });
 
-// // routes
-app.get('/', (req, res) => {
-    res.send("Hello World!");
-});
-
+// routes
+app.use('/profileManagement', profileManagement);
 
 // app listener
 app.listen(PORT, () => {
